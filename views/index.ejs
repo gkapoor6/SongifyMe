@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SongifyMe</title>
+    <% include partials/head.ejs %>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<header>
+    <% include partials/header.ejs %>
+</header>
+
+<main>
+    <div class="jumbotron" style="background-color:#ffe256 !important;">
+        <h1>SongifyMe</h1>
+        <p>Listen to songs that match your mood.</p>
+    </div>
+    <div class="container">
+        <fieldset>
+            <form action="/" method="post">
+                <input name="mood" type="text" class="ghost-input" placeholder="Enter a Mood" required>
+                <input type="submit" class="ghost-button" value="Get Song Suggestion">
+            </form>
+            <% if(song !== null){ %>
+            <p><%= song %></p>
+            <% } %>
+
+            <% if(error !== null){ %>
+            <p><%= error %></p>
+            <% } %>
+        </fieldset>
+    </div>
+</main>
+
+<footer>
+    <% include partials/footer.ejs %>
+</footer>
+
+</body>
+</html>
